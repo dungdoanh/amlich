@@ -1,0 +1,168 @@
+﻿<html>
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<META NAME="Author" CONTENT="Ho Ngoc Duc">
+<title>Ho Ngoc Duc's Lunar Calendar</title>
+<script language="JavaScript" src="amlich-hnd.js" type="text/javascript"></script>
+<script language="JavaScript">
+<!--
+	showVietCal();
+-->
+</script>
+</head>
+<body onLoad="">
+
+<h1>Chương trình âm lịch bằng JavaScript</h1>
+
+<table align="center" cellspacing="1" border="0">
+
+<tr>
+<td align="center">
+
+<script language="JavaScript">
+<!--
+	document.writeln(printSelectedMonth());
+//-->
+</script>
+
+</td>
+</tr>
+
+<tr>
+<td align="center">
+<form name="SelectMonth" action="">
+Th&aacute;ng
+<select name="month">
+  <option value="1">1
+  <option value="2">2
+  <option value="3">3
+  <option value="4">4
+  <option value="5">5
+  <option value="6">6
+  <option value="7">7
+  <option value="8">8
+  <option value="9">9
+  <option value="10">10
+  <option value="11">11
+  <option value="12">12
+</select> &#160;&#160;&#160;&#160;
+N&#x103;m
+<INPUT NAME="year" size=4 value="2005"> &#160;
+
+<p>
+
+<input type="button" value="Xem l&#x1ECB;ch th&aacute;ng" onClick="javascript:viewMonth(parseInt(month.value), parseInt(year.value));">
+&#160;&#160;
+<input type="button" value="Xem l&#x1ECB;ch n&#x0103;m" onClick="javascript:viewYear(parseInt(year.value));">
+</form>
+
+<script type="text/javascript">
+<!--
+	getSelectedMonth();
+	document.SelectMonth.month.value = currentMonth;
+	document.SelectMonth.year.value = currentYear;
+	function viewMonth(mm, yy) {
+		window.location = window.location.pathname + '?yy='+yy+'&mm='+mm;
+	}
+	function viewYear(yy) {
+		var loc = 'currentyear.html?yy='+yy;
+		var win2702 = window.open(loc, "win2702", "menubar=yes,scrollbars=yes,resizable=yes");
+	}
+	
+//-->
+</script>
+
+</td>
+</tr>
+
+</table>
+
+<ul>
+<li>Chọn một tháng của một năm trong khoảng 1800-2199 và nhấn chuột vào nút <b>Xem lịch tháng</b> để xem lịch của tháng đã chọn.</li>
+<li>Kích chuột vào nút <b>Xem lịch năm</b> sẽ hiển thị lịch của cả năm đã chọn. Lịch năm có thể in vừa trên một trang A4 (sử dụng chức năng in của chương trình duyệt).</li>
+<li>Để xem Can-Chi của một ngày, nhấn chuột vào ô hiển thị ngày đó. Nhấn chuột vào dòng thứ hai (chứa tên các ngày trong tuần: CN, T2...) sẽ hiện thông tin về chương trình.</li>
+</ul>
+
+
+<p>
+
+<h2>Sử dụng thư viện JavaScript tính âm lịch trên trang Web của bạn</h2>
+
+Bạn có thể hiển thị ngày tháng âm lịch trên trang Web của mình bằng nhiều cách khác nhau.
+
+<h3>Hiện ngày tháng trên thanh trạng thái (status bar)</h3>
+
+Đây là cách đơn giản nhất. Chỉ cần thêm đoạn mã sau vào bất kỳ vị trí nào trong trang Web của bạn:
+
+<p>
+<blockquote>
+<code>
+&lt;script type=&quot;text/javascript&quot; language=&quot;JavaScript&quot; src=&quot;http://www.ifis.uni-luebeck.de/~duc/amlich-hnd.js&quot;&gt;<br>
+&lt;/script&gt;<br>
+&lt;script language=&quot;JavaScript&quot;&gt;<br>
+&lt;!--<br>
+    showVietCal();<br>
+--&gt;<br>
+&lt;/script&gt;<br>
+</code>
+</blockquote>
+
+Kết quả sẽ giống như Statusbar của trang bạn đang xem.
+
+<h3>Chèn lịch tháng vào trang Web với IFRAME</h3>
+
+<p>Chèn đoạn mã sau vào vị trí mà bạn muốn bảng lịch tháng hiện ra:</p>
+
+<blockquote>
+<code>
+&lt;IFRAME src=&quot;http://www.ifis.uni-luebeck.de/~duc/amlich/JavaScript/currentmonth.html&quot; 
+align=&quot;right&quot; name=&quot;CurentMonth&quot; width=&quot;188&quot; height=&quot;228&quot; scrolling=&quot;no&quot; frameborder=0&gt;<br>
+&lt;/IFRAME&gt;
+</code>
+</blockquote>
+
+<p>Kết quả sẽ tương tự như trang <a href="sample01.html">sample01.html</a>.
+</p>
+
+<h3>Chèn trực tiếp lịch tháng vào trang Web</h3>
+
+<p>Chèn đoạn mã sau vào vị trí mà bạn muốn bảng lịch tháng hiện ra:</p>
+
+<blockquote>
+<code>
+&lt;script type=&quot;text/javascript&quot; language=&quot;JavaScript&quot; src=&quot;http://www.ifis.uni-luebeck.de/~duc/amlich-hnd.js&quot;&gt;<br>
+&lt;/script&gt;<br>
+&lt;script language=&quot;JavaScript&quot;&gt;<br>
+&lt;!--<br>
+      setOutputSize(&quot;small&quot;);<br>
+      document.writeln(printSelectedMonth());<br>
+--&gt;<br>
+&lt;/script&gt;<br>
+</code>
+</blockquote>
+
+<p>Kết quả sẽ tương tự như trang <a href="sample02.html">sample02.html</a>. Trang bạn đang xem cũng dùng phương pháp này.
+</p>
+
+<h3>Thông tin về chương trình</h3>
+
+Chương trình âm lịch Việt Nam bằng JavaScript do tác giả <a href="http://www.informatik.uni-leipzig.de/~duc/">Hồ Ngọc Đức</a> thực hiện. 
+Hiện tại chương trình chứa dữ liệu cho 4 thế kỷ, từ 1800 đến 2199. Các số liệu này được tính sẵn 
+bằng <a href="http://www.informatik.uni-leipzig.de/~duc/amlich/">chương trình Java</a> của cùng tác giả. Dữ liệu cho các thế kỷ khác có thể 
+được tác giả cung cấp theo yêu cầu.
+
+<p>
+Bạn có thể <a href="http://www.ifis.uni-luebeck.de/~duc/amlich-js.zip">download thư viện JavaScript tính âm lịch</a> và thêm các chức năng bạn muốn có. 
+Ví dụ, bạn có thể sửa đổi hàm alertDayInfo để chương trình không hiện Can-Chi của ngày vừa chọn mà hiện các thông tin khác như lịch hoạt động trong ngày v.v.
+
+<!--
+<h3>Những thay đổi gần đây</h3>
+
+<ul>
+<li> 03/2005: Sửa lỗi bất tương thích với IE. Hiển thị giờ hoàng đạo. Sửa lỗi tính jdn
+<li> 09/2004: Công bố phiên bản 0.2
+</ul>
+-->
+
+</body>
+</html>

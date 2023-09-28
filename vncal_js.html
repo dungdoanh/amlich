@@ -1,0 +1,101 @@
+﻿<html>
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<META NAME="Author" CONTENT="Ho Ngoc Duc">
+<title>Ho Ngoc Duc's Lunar Calendar</title>
+<script language="JavaScript" src="amlich-hnd.js" type="text/javascript"></script>
+<script language="JavaScript">
+<!--
+	showVietCal();
+-->
+</script>
+</head>
+<body onLoad="">
+
+<!--
+<h3 align=center>Chương trình âm lịch bằng JavaScript</h3>
+-->
+<table align="center" cellspacing="1" border="0">
+
+<tr>
+<td align="center">
+
+<script language="JavaScript">
+<!--
+	document.writeln(printSelectedMonth());
+//-->
+</script>
+
+</td>
+</tr>
+
+<tr>
+<td align="center">
+<form name="SelectMonth" action="">
+Th&aacute;ng
+<select name="month">
+  <option value="1">1
+  <option value="2">2
+  <option value="3">3
+  <option value="4">4
+  <option value="5">5
+  <option value="6">6
+  <option value="7">7
+  <option value="8">8
+  <option value="9">9
+  <option value="10">10
+  <option value="11">11
+  <option value="12">12
+</select> &#160;&#160;&#160;&#160;
+N&#x103;m
+<INPUT NAME="year" size=4 value="2005"> &#160;
+<p>
+<input type="button" value="Xem l&#x1ECB;ch th&aacute;ng" onClick="javascript:viewMonth(parseInt(month.value), parseInt(year.value));">
+
+&#160;&#160;
+<input type="button" value="Xem l&#x1ECB;ch n&#x0103;m" onClick="javascript:viewYear(parseInt(year.value));">
+<!--
+-->
+</form>
+
+<script type="text/javascript">
+<!--
+	getSelectedMonth();
+	document.SelectMonth.month.value = currentMonth;
+	document.SelectMonth.year.value = currentYear;
+	function viewMonth(mm, yy) {
+		window.location = window.location.pathname + '?yy='+yy+'&mm='+mm;
+	}
+	function viewYear(yy) {
+		var loc = 'currentyear.html?yy='+yy;
+		var win2702 = window.open(loc, "win2702", "menubar=yes,scrollbars=yes,resizable=yes");
+	}
+	
+//-->
+</script>
+
+</td>
+</tr>
+
+</table>
+
+<ul>
+<li>Chọn một tháng của một năm trong khoảng 1800-2199 và nhấn chuột vào nút <b>Xem lịch tháng</b> để xem lịch của tháng đã chọn.</li>
+<li>Kích chuột vào nút <b>Xem lịch năm</b> sẽ hiển thị lịch của cả năm đã chọn. Lịch năm có thể in vừa trên một trang A4 (sử dụng chức năng in của chương trình duyệt).</li>
+<li>Để xem thông tin chi tiết về một ngày, nhấn chuột vào ô hiển thị ngày đó. Nhấn chuột vào dòng thứ hai (chứa tên các ngày trong tuần: CN, T2...) sẽ hiện thông tin về chương trình.</li>
+<li>Nếu cần xem ngày tháng trước 1800 hay từ 2200 trở về sau, bạn có thể sử dụng <a href="../vncal.html">chương trình âm lịch viết bằng Java</a>. Chương trình Java này hỗ trợ nhiều chức năng nâng cao như: so sánh lịch Việt Nam và lịch Trung Quốc, tính âm lịch cho bất kỳ múi giờ nào, tính các thời điểm Sóc và khí tiết, tính giờ Chính Ngọ cho một địa điểm bất kỳ v.v.</li>
+</ul>
+
+<!--
+<h3>Những thay đổi gần đây</h3>
+
+<ul>
+<li> 03/2007: Hiện giờ đầu ngày và khí tiết (bản 0.8)
+<li> 08/2006: Cập nhật dữ liệu 1925 (bản 0.7)
+<li> 03/2005: Sửa lỗi bất tương thích với IE. Hiển thị giờ hoàng đạo. Sửa lỗi tính jdn
+<li> 09/2004: Công bố phiên bản 0.2
+</ul>
+-->
+
+</body>
+</html>
