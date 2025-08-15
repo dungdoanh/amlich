@@ -1,5 +1,6 @@
 ﻿<html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
 <META NAME="Author" CONTENT="Ho Ngoc Duc">
 <title>Ho Ngoc Duc's Lunar Calendar</title>
@@ -9,6 +10,20 @@
 	showVietCal();
 -->
 </script>
+<style>
+/* CSS cho màn hình máy tính bảng và lớn hơn */
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+/* CSS cho màn hình di động */
+@media screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+}
+</style>
 </head>
 <body onLoad="">
 
@@ -92,5 +107,6 @@ N&#x103;m
 
 </body>
 </html>
+
 
 
